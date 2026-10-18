@@ -1,6 +1,4 @@
 import java.io.File;
-import java.util.ArrayList;
-import static java.lang.Character.getName;
 
 public class FileOrganizer {
             public static void main(String[] args) {
@@ -34,7 +32,6 @@ public class FileOrganizer {
                     if (files[i].isFile()) {
                         String fileName = files[i].getName();
 
-                        // Step 6: Find extension
                         int dotIndex = fileName.lastIndexOf(".");
 
                         if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
@@ -45,5 +42,34 @@ public class FileOrganizer {
                         }
                     }
                 }
+
+                File imageFolder = new File(folder, "Images");
+
+                if(!imageFolder.exists()){
+                    boolean create = imageFolder.mkdir();
+                    System.out.println("Folder created : "+create);
+                }
+
+                File DocumentFolder  = new File(folder,"Documents");
+
+                if(!DocumentFolder.exists()){
+                    boolean create = DocumentFolder.mkdir();
+                    System.out.println("Folder created : "+create);
+                }
+
+                File MusicFolder = new File(folder,"Music");
+
+                if(!MusicFolder.exists()){
+                    boolean create = MusicFolder.mkdir();
+                    System.out.println("Folder created : "+create);
+                }
+
+                File VideoFolder = new File (folder,"Videos");
+
+                if(!VideoFolder.exists()){
+                    boolean create = VideoFolder.mkdir();
+                    System.out.println("Folder created : "+create);
+                }
             }
+
         }
