@@ -37,10 +37,24 @@ public class FileOrganizer {
                         if (dotIndex > 0 && dotIndex < fileName.length() - 1) {
                             String extension = fileName.substring(dotIndex + 1);
                             System.out.println(fileName + " -> " + extension);
+
+                            if(extension.equals("jpg")||extension.equals("png")){
+                                System.out.println("Images");
+                            }
+                            if(extension.equals("pdf")||extension.equals("docx")||extension.equals("txt")){
+                                System.out.println("Documents");
+                            }
+                            if(extension.equals("mp3")||extension.equals("wav")){
+                                System.out.println("Music");
+                            }
+                            if(extension.equals("mp4")||extension.equals("mkv")){
+                                System.out.println("videos");
+                            }
                         } else {
                             System.out.println(fileName + " -> No extension");
                         }
                     }
+
                 }
 
                 File imageFolder = new File(folder, "Images");
