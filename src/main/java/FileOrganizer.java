@@ -85,7 +85,7 @@ public class FileOrganizer {
                                   Files.move(source.toPath(), destination.toPath());
                                   System.out.println("File moved successfully");
                               } catch (IOException e) {
-                                  System.out.println("File operation failed :"+e.getMessage());
+                                  System.out.println("File operation failed :"+fileName+":"+e.getMessage());
                               }
 
                             }
@@ -99,7 +99,7 @@ public class FileOrganizer {
                                    Files.move(source.toPath(), destination.toPath());
                                    System.out.println("File moved successfully");
                                }catch (IOException e) {
-                                   System.out.println("File operation failed : " + e.getMessage());
+                                   System.out.println("File operation failed : "+fileName+":" + e.getMessage());
                                }
                             }
 
@@ -114,7 +114,7 @@ public class FileOrganizer {
                                   Files.move(source.toPath(), destination.toPath());
                                   System.out.println("File moved successfully");
                               } catch (IOException e) {
-                                  System.out.println("File operation failed : "+e.getMessage());
+                                  System.out.println("File operation failed : "+fileName+":"+e.getMessage());
                               }
                             }
 
@@ -129,7 +129,7 @@ public class FileOrganizer {
                                     Files.move(source.toPath(), destination.toPath());
                                     System.out.println("File moved successfully");
                                 } catch (IOException e) {
-                                    System.out.println("File operation failed : " + e.getMessage());
+                                    System.out.println("File operation failed : "+fileName+":" + e.getMessage());
                                 }
                             }
 
