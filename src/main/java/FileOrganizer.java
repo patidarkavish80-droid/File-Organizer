@@ -1,9 +1,11 @@
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Locale;
+import java.nio.file.*;
 
 public class FileOrganizer {
-            public static void main(String[] args) {
+            public static void main(String[] args) throws IOException {
 
 
                 File folder = new File("text-folder");
@@ -76,30 +78,29 @@ public class FileOrganizer {
 
                                 File source = new File(folder, fileName);
                                 File destination = new File(imageFolder,fileName);
-                                boolean res = source.renameTo(destination);
-                                System.out.println("Moved: " + res);
+                              Files.move(source.toPath(),destination.toPath());
+
 
                             }
                             if(extension.equals("pdf")||extension.equals("docx")||extension.equals("txt")){
                                 System.out.println("Documents");
                                 File source = new File(folder,fileName);
                                 File destination = new File(DocumentFolder,fileName);
-                                boolean res = source.renameTo(destination);
-                                System.out.println("Moved: " + res);
+                                Files.move(source.toPath(),destination.toPath());
+
                             }
                             if(extension.equals("mp3")||extension.equals("wav")){
                                 System.out.println("Music");
                                 File source = new File(folder ,fileName);
                                 File destination = new File(MusicFolder,fileName);
-                                boolean res = source.renameTo(destination);
-                                System.out.println("Moved: " + res);
+                              Files.move(source.toPath(),destination.toPath());
+
                             }
                             if(extension.equals("mp4")||extension.equals("mkv")){
                                 System.out.println("videos");
                                 File source = new File(folder ,fileName);
                                 File destination = new File(VideoFolder,fileName);
-                                boolean res = source.renameTo(destination);
-                                System.out.println("Moved: " + res);
+                            Files.move(source.toPath(),destination.toPath());
                             }
                         } else {
                             System.out.println(fileName + " -> No extension");
