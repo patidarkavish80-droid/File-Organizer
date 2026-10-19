@@ -78,110 +78,99 @@ public class FileOrganizer {
 
 
                     if (extension.equals("jpg") ||
-                            extension.equals("png")||
-                            extension.equals("jpeg")||
-                            extension.equals("gif")||
-                            extension.equals("webp")||
-                            extension.equals("bmp")||
-                            extension.equals("svg")||
-                            extension.equals("ico")||
-                            extension.equals("tiff")||
-                            extension.equals("tif")||
-                            extension.equals("heic")||
-                            extension.equals("heif")||
+                            extension.equals("png") ||
+                            extension.equals("jpeg") ||
+                            extension.equals("gif") ||
+                            extension.equals("webp") ||
+                            extension.equals("bmp") ||
+                            extension.equals("svg") ||
+                            extension.equals("ico") ||
+                            extension.equals("tiff") ||
+                            extension.equals("tif") ||
+                            extension.equals("heic") ||
+                            extension.equals("heif") ||
                             extension.equals("avif")) {
 
                         System.out.println("Images");
 
                         File source = new File(folder, fileName);
-                        File destination = new File(imageFolder, fileName);
-
 
                         try {
-                            Files.move(source.toPath(), destination.toPath());
-                            System.out.println("File moved successfully");
+                            moveFileWithoutDuplicate(source, imageFolder);
                         } catch (IOException e) {
-                            System.out.println("File operation failed :" + fileName + ":" + e.getMessage());
+                            System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                         }
 
 
                     } else if (extension.equals("pdf") ||
-                                extension.equals("docx") ||
-                                extension.equals("doc") ||
-                                extension.equals("txt") ||
-                                extension.equals("rtf") ||
-                                extension.equals("odt") ||
-                                extension.equals("xls") ||
-                                extension.equals("xlsx") ||
-                                extension.equals("csv") ||
-                                extension.equals("odp") ||
-                                extension.equals("md") ||
-                                extension.equals("ods") ||
-                                extension.equals("tex") ||
-                                extension.equals("epub") ||
-                                extension.equals("pptx") ||
-                                extension.equals("ppt")) {
+                            extension.equals("docx") ||
+                            extension.equals("doc") ||
+                            extension.equals("txt") ||
+                            extension.equals("rtf") ||
+                            extension.equals("odt") ||
+                            extension.equals("xls") ||
+                            extension.equals("xlsx") ||
+                            extension.equals("csv") ||
+                            extension.equals("odp") ||
+                            extension.equals("md") ||
+                            extension.equals("ods") ||
+                            extension.equals("tex") ||
+                            extension.equals("epub") ||
+                            extension.equals("pptx") ||
+                            extension.equals("ppt")) {
 
                         System.out.println("Documents");
 
                         File source = new File(folder, fileName);
-                        File destination = new File(DocumentFolder, fileName);
 
                         try {
-                            Files.move(source.toPath(), destination.toPath());
-                            System.out.println("File moved successfully");
+                            moveFileWithoutDuplicate(source, DocumentFolder);
                         } catch (IOException e) {
-                            System.out.println("File operation failed : " + fileName + ":" + e.getMessage());
+                            System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                         }
 
                     } else if (extension.equals("mp3") ||
-                            extension.equals("wav")||
-                            extension.equals("aac")||
-                            extension.equals("m4a")||
-                            extension.equals("flac")||
-                            extension.equals("ogg")||
-                            extension.equals("wma")||
-                            extension.equals("opus")||
-                            extension.equals("aiff")||
-                            extension.equals("mid")||
+                            extension.equals("wav") ||
+                            extension.equals("aac") ||
+                            extension.equals("m4a") ||
+                            extension.equals("flac") ||
+                            extension.equals("ogg") ||
+                            extension.equals("wma") ||
+                            extension.equals("opus") ||
+                            extension.equals("aiff") ||
+                            extension.equals("mid") ||
                             extension.equals("midi")) {
 
                         System.out.println("Music");
 
                         File source = new File(folder, fileName);
-                        File destination = new File(MusicFolder, fileName);
 
                         try {
-                            Files.move(source.toPath(), destination.toPath());
-                            System.out.println("File moved successfully");
+                            moveFileWithoutDuplicate(source, MusicFolder);
                         } catch (IOException e) {
-                            System.out.println("File operation failed : " + fileName + ":" + e.getMessage());
+                            System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                         }
 
 
-
                     } else if (extension.equals("mp4") ||
-                            extension.equals("mkv")||
-                            extension.equals("avi")||
-                            extension.equals("mov")||
-                            extension.equals("wmv")||
-                            extension.equals("flv")||
-                            extension.equals("webm")||
-                            extension.equals("m4v")||
-                            extension.equals("mpeg")||
-                            extension.equals("3gp")||
+                            extension.equals("mkv") ||
+                            extension.equals("avi") ||
+                            extension.equals("mov") ||
+                            extension.equals("wmv") ||
+                            extension.equals("flv") ||
+                            extension.equals("webm") ||
+                            extension.equals("m4v") ||
+                            extension.equals("mpeg") ||
+                            extension.equals("3gp") ||
                             extension.equals("ts")) {
 
                         System.out.println("videos");
-
                         File source = new File(folder, fileName);
-                        File destination = new File(VideoFolder, fileName);
 
                         try {
-                            Files.move(source.toPath(), destination.toPath());
-                            System.out.println("File moved successfully");
+                            moveFileWithoutDuplicate(source, VideoFolder);
                         } catch (IOException e) {
-                            System.out.println("File operation failed : " + fileName + ":" + e.getMessage());
+                            System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                         }
 
 
@@ -189,29 +178,55 @@ public class FileOrganizer {
                         System.out.println(fileName + " -> Other");
 
                         File source = new File(folder, fileName);
-                        File destination = new File(otherfolder, fileName);
 
                         try {
-                            Files.move(source.toPath(), destination.toPath());
-                            System.out.println("file moved successfully");
+                            moveFileWithoutDuplicate(source, otherfolder);
                         } catch (IOException e) {
-                            System.out.println("Folder operation error " + fileName + ":" + e.getMessage());
+                            System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                         }
                     }
-                }else {
+                } else {
                     System.out.println(fileName + " -> No extension");
 
-                    File sourse = new File(folder, fileName);
-                    File destination = new File(otherfolder, fileName);
+                    File source = new File(folder, fileName);
 
                     try {
-                        Files.move(sourse.toPath(), destination.toPath());
-                        System.out.println("file moved successfully");
+                        moveFileWithoutDuplicate(source, otherfolder);
                     } catch (IOException e) {
-                        System.out.println("Folder operation error " + fileName + ":" + e.getMessage());
+                        System.out.println("File operation failed: " + fileName + ": " + e.getMessage());
                     }
                 }
             }
         }
+    }
+
+    public static void moveFileWithoutDuplicate(
+            File sourceFile, File destinationFolder) throws IOException {
+        String fileName = sourceFile.getName();
+        int dotIndex = fileName.lastIndexOf(".");
+        String name;
+        String extension;
+        if (dotIndex > 0) {
+            name = fileName.substring(0, dotIndex);
+            extension = fileName.substring(dotIndex);
+        } else {
+            name = fileName;
+            extension = "";
+        }
+        File destinationFile = new File(destinationFolder, fileName);
+        int count = 1;
+        while (destinationFile.exists()) {
+            String newName = name + "_" + count + extension;
+            destinationFile = new File(destinationFolder, newName);
+            count++;
+        }
+
+        Path source = sourceFile.toPath();
+        Path destination = destinationFile.toPath();
+
+        Files.move(source, destination);
+
+        System.out.println(
+                fileName + " moved as " + destinationFile.getName());
     }
 }
