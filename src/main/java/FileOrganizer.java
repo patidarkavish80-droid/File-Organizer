@@ -77,7 +77,20 @@ public class FileOrganizer {
                     System.out.println(fileName + " -> " + extension);
 
 
-                    if (extension.equals("jpg") || extension.equals("png")) {
+                    if (extension.equals("jpg") ||
+                            extension.equals("png")||
+                            extension.equals("jpeg")||
+                            extension.equals("gif")||
+                            extension.equals("webp")||
+                            extension.equals("bmp")||
+                            extension.equals("svg")||
+                            extension.equals("ico")||
+                            extension.equals("tiff")||
+                            extension.equals("tif")||
+                            extension.equals("heic")||
+                            extension.equals("heif")||
+                            extension.equals("avif")) {
+
                         System.out.println("Images");
 
                         File source = new File(folder, fileName);
@@ -91,7 +104,24 @@ public class FileOrganizer {
                             System.out.println("File operation failed :" + fileName + ":" + e.getMessage());
                         }
 
-                    } else if (extension.equals("pdf") || extension.equals("docx") || extension.equals("txt")) {
+
+                    } else if (extension.equals("pdf") ||
+                                extension.equals("docx") ||
+                                extension.equals("doc") ||
+                                extension.equals("txt") ||
+                                extension.equals("rtf") ||
+                                extension.equals("odt") ||
+                                extension.equals("xls") ||
+                                extension.equals("xlsx") ||
+                                extension.equals("csv") ||
+                                extension.equals("odp") ||
+                                extension.equals("md") ||
+                                extension.equals("ods") ||
+                                extension.equals("tex") ||
+                                extension.equals("epub") ||
+                                extension.equals("pptx") ||
+                                extension.equals("ppt")) {
+
                         System.out.println("Documents");
 
                         File source = new File(folder, fileName);
@@ -103,7 +133,19 @@ public class FileOrganizer {
                         } catch (IOException e) {
                             System.out.println("File operation failed : " + fileName + ":" + e.getMessage());
                         }
-                    } else if (extension.equals("mp3") || extension.equals("wav")) {
+
+                    } else if (extension.equals("mp3") ||
+                            extension.equals("wav")||
+                            extension.equals("aac")||
+                            extension.equals("m4a")||
+                            extension.equals("flac")||
+                            extension.equals("ogg")||
+                            extension.equals("wma")||
+                            extension.equals("opus")||
+                            extension.equals("aiff")||
+                            extension.equals("mid")||
+                            extension.equals("midi")) {
+
                         System.out.println("Music");
 
                         File source = new File(folder, fileName);
@@ -115,7 +157,21 @@ public class FileOrganizer {
                         } catch (IOException e) {
                             System.out.println("File operation failed : " + fileName + ":" + e.getMessage());
                         }
-                    } else if (extension.equals("mp4") || extension.equals("mkv")) {
+
+
+
+                    } else if (extension.equals("mp4") ||
+                            extension.equals("mkv")||
+                            extension.equals("avi")||
+                            extension.equals("mov")||
+                            extension.equals("wmv")||
+                            extension.equals("flv")||
+                            extension.equals("webm")||
+                            extension.equals("m4v")||
+                            extension.equals("mpeg")||
+                            extension.equals("3gp")||
+                            extension.equals("ts")) {
+
                         System.out.println("videos");
 
                         File source = new File(folder, fileName);
