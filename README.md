@@ -35,12 +35,6 @@ The `text-folder` directory contains the files to organize. The program creates 
 - **Videos:** MP4, MKV, AVI, MOV, and other video formats
 - **Other:** Unknown file types and files without extensions
 
-## Requirements
-
-- Java Development Kit (JDK)
-- IntelliJ IDEA or another Java IDE
-- Maven
-
 ## How to Run
 
 1. Clone or download this repository.
@@ -57,10 +51,6 @@ The `text-folder` directory contains the files to organize. The program creates 
 - Java NIO
 - Maven
 - Git and GitHub
-
-## Learning Outcomes
-
-This project demonstrates file handling, conditional statements, loops, methods, exception handling, file extensions, and duplicate filename management in Java.
 
 ## Author
 
