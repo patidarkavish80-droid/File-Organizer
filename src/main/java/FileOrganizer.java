@@ -73,38 +73,71 @@ public class FileOrganizer {
                             System.out.println(fileName + " -> " + extension);
 
 
+
                             if(extension.equals("jpg")||extension.equals("png")){
                                 System.out.println("Images");
 
                                 File source = new File(folder, fileName);
                                 File destination = new File(imageFolder,fileName);
-                              Files.move(source.toPath(),destination.toPath());
 
+
+                              try {
+                                  Files.move(source.toPath(), destination.toPath());
+                                  System.out.println("File moved successfully");
+                              } catch (IOException e) {
+                                  System.out.println("File operation failed :"+e.getMessage());
+                              }
 
                             }
                             if(extension.equals("pdf")||extension.equals("docx")||extension.equals("txt")){
                                 System.out.println("Documents");
+
                                 File source = new File(folder,fileName);
                                 File destination = new File(DocumentFolder,fileName);
-                                Files.move(source.toPath(),destination.toPath());
 
+                               try {
+                                   Files.move(source.toPath(), destination.toPath());
+                                   System.out.println("File moved successfully");
+                               }catch (IOException e) {
+                                   System.out.println("File operation failed : " + e.getMessage());
+                               }
                             }
+
+
                             if(extension.equals("mp3")||extension.equals("wav")){
                                 System.out.println("Music");
+
                                 File source = new File(folder ,fileName);
                                 File destination = new File(MusicFolder,fileName);
-                              Files.move(source.toPath(),destination.toPath());
 
+                              try {
+                                  Files.move(source.toPath(), destination.toPath());
+                                  System.out.println("File moved successfully");
+                              } catch (IOException e) {
+                                  System.out.println("File operation failed : "+e.getMessage());
+                              }
                             }
-                            if(extension.equals("mp4")||extension.equals("mkv")){
+
+
+                            if(extension.equals("mp4")||extension.equals("mkv")) {
                                 System.out.println("videos");
-                                File source = new File(folder ,fileName);
-                                File destination = new File(VideoFolder,fileName);
-                            Files.move(source.toPath(),destination.toPath());
+
+                                File source = new File(folder, fileName);
+                                File destination = new File(VideoFolder, fileName);
+
+                                try {
+                                    Files.move(source.toPath(), destination.toPath());
+                                    System.out.println("File moved successfully");
+                                } catch (IOException e) {
+                                    System.out.println("File operation failed : " + e.getMessage());
+                                }
                             }
+
+
                         } else {
                             System.out.println(fileName + " -> No extension");
                         }
+
 
                     }
 
